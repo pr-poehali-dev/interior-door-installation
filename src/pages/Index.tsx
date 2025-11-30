@@ -54,7 +54,7 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-6">
             <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground leading-tight">
-              Профессиональная установка дверей
+              Профессиональная установка межкомнатных и входных дверей в Ульяновске
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Межкомнатные и входные двери любой сложности. Гарантия качества и точные сроки.

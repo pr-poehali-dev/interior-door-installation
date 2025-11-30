@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "Test consultation submission",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Иван Петров",
+        "phone": "+79371234567",
+        "message": "Интересует установка межкомнатных дверей"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test without message field",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Мария Смирнова",
+        "phone": "+79371234567"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

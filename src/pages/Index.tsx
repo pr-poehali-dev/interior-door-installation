@@ -14,14 +14,45 @@ const Index = () => {
     phone: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Заявка отправлена!",
-      description: "Мы свяжемся с вами в ближайшее время.",
-    });
-    setFormData({ name: "", phone: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/2c255cb8-9548-428a-a67a-f1e328ccbf79', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Заявка отправлена!",
+          description: "Мы свяжемся с вами в ближайшее время.",
+        });
+        setFormData({ name: "", phone: "", message: "" });
+      } else {
+        toast({
+          title: "Ошибка",
+          description: "Не удалось отправить заявку. Попробуйте позже.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить заявку. Попробуйте позже.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToSection = (id: string) => {
@@ -193,8 +224,8 @@ const Index = () => {
                     className="min-h-32 resize-none"
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full text-lg h-12">
-                  Отправить заявку
+                <Button type="submit" size="lg" className="w-full text-lg h-12" disabled={isSubmitting}>
+                  {isSubmitting ? "Отправка..." : "Отправить заявку"}
                 </Button>
               </form>
             </CardContent>

@@ -225,7 +225,7 @@ const Index = () => {
                 </div>
               </div>
               <h3 className="font-heading font-semibold text-lg mb-2">Email</h3>
-              <p className="text-muted-foreground">info@dveri-montazh.ru</p>
+              <p className="text-muted-foreground">raz04@mail.ru</p>
             </Card>
 
             <Card className="text-center p-8 border-0 hover:shadow-lg transition-shadow">

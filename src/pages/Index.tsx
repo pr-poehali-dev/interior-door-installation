@@ -34,7 +34,7 @@ const Index = () => {
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="font-heading font-bold text-2xl text-foreground">
-            ДверьСервис
+            Двери Монтаж
           </div>
           <div className="hidden md:flex gap-8">
             <button onClick={() => scrollToSection('services')} className="text-muted-foreground hover:text-foreground transition-colors">
@@ -225,7 +225,7 @@ const Index = () => {
                 </div>
               </div>
               <h3 className="font-heading font-semibold text-lg mb-2">Email</h3>
-              <p className="text-muted-foreground">info@dverservice.ru</p>
+              <p className="text-muted-foreground">info@dveri-montazh.ru</p>
             </Card>
 
             <Card className="text-center p-8 border-0 hover:shadow-lg transition-shadow">
@@ -244,7 +244,7 @@ const Index = () => {
       <footer className="bg-foreground text-background py-8 px-6">
         <div className="container mx-auto text-center">
           <p className="text-sm opacity-80">
-            © 2024 ДверьСервис. Все права защищены.
+            © 2024 Двери Монтаж. Все права защищены.
           </p>
         </div>
       </footer>
